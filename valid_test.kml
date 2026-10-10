@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document id="root_doc">
+    <Schema id="valid_test" name="valid_test">
+      <SimpleField name="type" type="string"/>
+    </Schema>
+    <Schema id="valid_test.schema">
+      <SimpleField name="type" type="string"/>
+    </Schema>
+    <Schema id="valid_test.schema">
+      <SimpleField name="type" type="string"/>
+    </Schema>
+    <Document id="valid_test">
+      <name>valid_test</name>
+      <Placemark id="valid_test.1">
+        <name>Test Polygon</name>
+        <ExtendedData>
+          <SchemaData schemaUrl="#valid_test.schema">
+            <SimpleData name="type">Park</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>
+                -122.42,37.77,0
+                -122.41,37.77,0
+                -122.41,37.78,0
+                -122.42,37.78,0
+                -122.42,37.77,0
+              </coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      <Placemark id="valid_test.2">
+        <name>Test Line</name>
+        <ExtendedData>
+          <SchemaData schemaUrl="#valid_test.schema">
+            <SimpleData name="type">Road</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <LineString>
+          <coordinates>
+            -122.4,37.75,0
+            -122.39,37.76,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark id="valid_test.3">
+        <name>Test Point</name>
+        <ExtendedData>
+          <SchemaData schemaUrl="#valid_test.schema">
+            <SimpleData name="type">Monument</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <Point>
+          <coordinates>
+            -122.43,37.76,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Document>
+  </Document>
+</kml>
