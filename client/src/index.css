@@ -1,0 +1,198 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@layer base {
+  :root {
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    color: #20251f;
+    background: #eee9df;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100%;
+    margin: 0;
+  }
+
+  body {
+    min-width: 320px;
+    background: #eee9df;
+    color: #20251f;
+  }
+
+  button,
+  input {
+    font: inherit;
+  }
+}
+
+.app-shell {
+  min-height: 100vh;
+  background-color: #eee9df;
+  background-image: linear-gradient(rgba(44, 55, 42, 0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(44, 55, 42, 0.045) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.display-font {
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: -0.01em;
+}
+
+.eyebrow {
+  color: #68705f;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.app-header {
+  border-bottom: 1px solid #c9c6b9;
+  background: rgba(238, 233, 223, 0.92);
+  backdrop-filter: blur(12px);
+}
+
+.brand-mark {
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  border: 1px solid #263326;
+  border-radius: 50%;
+  color: #f8f4e9;
+  background: #263326;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.1rem;
+}
+
+.panel {
+  border: 1px solid #cbc8bb;
+  background: rgba(250, 248, 241, 0.87);
+  box-shadow: 0 14px 32px rgba(47, 54, 42, 0.08);
+}
+
+.button-primary {
+  border: 1px solid #bf5d32;
+  border-radius: 3px;
+  color: #fffaf0;
+  background: #bf5d32;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.button-primary:hover:not(:disabled) {
+  background: #a44d29;
+  transform: translateY(-1px);
+}
+
+.button-primary:disabled {
+  cursor: wait;
+  opacity: 0.62;
+}
+
+.button-quiet {
+  color: #495745;
+  transition: color 160ms ease, background 160ms ease;
+}
+
+.button-quiet:hover {
+  color: #bf5d32;
+  background: rgba(191, 93, 50, 0.08);
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid #bcc4b4;
+  border-radius: 99px;
+  padding: 0.3rem 0.6rem;
+  color: #3e5840;
+  background: #e8efe3;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.status-pill::before {
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 50%;
+  background: currentColor;
+  content: "";
+}
+
+.status-pill.is-processing {
+  color: #a44d29;
+  background: #f7e8dc;
+}
+
+.status-pill.is-failed {
+  color: #913c38;
+  background: #f6dfdc;
+}
+
+.drop-zone {
+  border: 1px dashed #8e9a85;
+  background: rgba(232, 239, 227, 0.42);
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.drop-zone:hover,
+.drop-zone.is-active {
+  border-color: #bf5d32;
+  background: rgba(247, 232, 220, 0.75);
+  transform: translateY(-2px);
+}
+
+.mono-data {
+  font-family: "Courier New", monospace;
+  letter-spacing: 0.02em;
+}
+
+.metric-value {
+  color: #263326;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.45rem, 3vw, 2.25rem);
+  line-height: 1;
+}
+
+.leaflet-container {
+  min-height: 100%;
+  background: #d8ddd3;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+.leaflet-control-zoom,
+.leaflet-control-attribution {
+  border: 1px solid #c9c6b9 !important;
+  box-shadow: 0 3px 12px rgba(47, 54, 42, 0.12) !important;
+}
+
+.leaflet-bar a {
+  color: #263326 !important;
+  background: #faf8f1 !important;
+}
+
+@media (max-width: 700px) {
+  .app-header {
+    align-items: flex-start;
+  }
+
+  .app-shell {
+    background-size: 22px 22px;
+  }
+}
+.dark .leaflet-layer,
+.dark .leaflet-control-zoom-in,
+.dark .leaflet-control-zoom-out,
+.dark .leaflet-control-attribution {
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
